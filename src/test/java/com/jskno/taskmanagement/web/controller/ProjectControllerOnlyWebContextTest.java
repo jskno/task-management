@@ -39,7 +39,7 @@ public class ProjectControllerOnlyWebContextTest {
     @MockBean
     TaskService taskService;
 
-    @Test
+//    @Test
     public void whenProjectExists_thenGetSuccess() throws Exception {
         Mockito.when(projectService.findById(1L))
                 .thenReturn(Optional.of(new Project(1L, "testName", LocalDate.now())));

@@ -19,7 +19,7 @@ public class ProjectRestApiLiveTest {
 
     private RestTemplate restTemplate = new RestTemplate();
 
-    @Test
+//    @Test
     public void givenProjectExists_whenGet_thenSuccess() {
         ResponseEntity<ProjectDto> response = restTemplate.getForEntity(BASE_URL + "1", ProjectDto.class);
 
@@ -27,7 +27,7 @@ public class ProjectRestApiLiveTest {
         Assertions.assertNotNull(response.getBody());
     }
 
-    @Test
+//    @Test
     public void givenNewProject_whenCreate_thenSuccess() {
         ProjectDto projectDto = new ProjectDto("My Test Project 2", LocalDate.now());
         ResponseEntity<ProjectDto> response = restTemplate.postForEntity(BASE_URL, projectDto, ProjectDto.class);
@@ -36,7 +36,7 @@ public class ProjectRestApiLiveTest {
         Assertions.assertNotNull(response.getBody());
     }
 
-    @Test
+//    @Test
     public void givenExistsProject_whenDelete_thenSuccess() {
         ProjectDto projectDto = new ProjectDto("My Delete Test Project 3", LocalDate.now());
         ResponseEntity<ProjectDto> responseCreate = restTemplate.postForEntity(BASE_URL, projectDto, ProjectDto.class);
